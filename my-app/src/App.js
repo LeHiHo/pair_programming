@@ -3,34 +3,73 @@ import React, { useState, useRef } from "react";
 import "./App.css";
 
 function App() {
-  const [focus, setFocus] = useState(false);
-  const [error, setError] = useState(false);
-  const inputRef = useRef(null);
+  const [idError, setIdError] = useState(false);
+  const [pwError, setPwError] = useState(false);
 
-  const labelClick = () => {
-    if (inputRef.current) {
-      inputRef.current.focus();
-      setFocus(true);
-    }
-  };
-  const inputChange = (e) => {
-    if (e.target.value === "") {
-      setError(true);
-    } else {
-      setError(false);
-    }
-  };
+  const idInputRef = useRef(null);
+  const pwInputRef = useRef(null);
 
-  const inputBlur = () => {
-    setFocus(false);
-    if (inputRef.current && inputRef.current.value === "") {
-      setError(true);
+  const [id, setId] = useState("");
+  const [pw, setPw] = useState("");
+
+  const idLabelClick = () => {
+    if (id) {
+      idInputRef.current.focus();
+      setIdError(false);
     }
   };
 
-  let inputStatus = "";
-  if (focus) inputStatus += " focus";
-  if (error) inputStatus += " error";
+  const PwLabelClick = () => {
+    if (pw) {
+      pwInputRef.current.focus();
+      setPwError(false);
+    }
+  };
+
+  const idInputChange = () => {
+    setId(idInputRef.current.value);
+    if (!id) {
+      setIdError(true);
+    }
+  };
+
+  const pwInputChange = () => {
+    setPw(pwInputRef.current.value);
+
+    if (!pw) {
+      setPwError(true);
+    }
+    // if (pwInputRef.current.value === "") {
+    //   setPwError(true);
+    // } else {
+    //   setPw(idInputRef.current.value);
+    //   setPwError(false);
+    // }
+  };
+
+  // onFocus : focus 받은 경우
+
+  // onBlur : focus 받은 경우
+
+  const idInputBlur = () => {
+    setIdError(false);
+    if (idInputRef.current && idInputRef.current.value === "") {
+      setIdError(true);
+    }
+    if (pwInputRef.current && pwInputRef.current.value === "") {
+      setIdError(true);
+    }
+  };
+
+  const pwInputBlur = () => {
+    setPwError(false);
+    if (idInputRef.current && idInputRef.current.value === "") {
+      setPwError(true);
+    }
+    if (pwInputRef.current && pwInputRef.current.value === "") {
+      setPwError(true);
+    }
+  };
 
   return (
     <div id="join-page">
@@ -43,14 +82,29 @@ function App() {
           <input type="checkbox" />
         </label>
         <div className="form-list">
-          <label className={inputStatus} onClick={labelClick}>
-            <input type="text" placeholder="아이디" ref={inputRef} onChange={inputChange} onBlur={inputBlur} />
+          <label className={idError ? "error" : ""} onClick={idLabelClick}>
+            <input
+              type="text"
+              placeholder="아이디"
+              ref={idInputRef}
+              onChange={idInputChange}
+              onBlur={idInputBlur}
+            />
           </label>
-          <label className={inputStatus} onClick={labelClick}>
-            <input type="password" placeholder="비밀번호" ref={inputRef} onChange={inputChange} onBlur={inputBlur} />
+          <label className={pwError ? "error" : ""} onClick={PwLabelClick}>
+            <input
+              type="password"
+              placeholder="비밀번호"
+              ref={pwInputRef}
+              onChange={pwInputChange}
+              onBlur={pwInputBlur}
+            />
           </label>
           <label>
-            <input type="email" placeholder="[선택] 비밀번호 분실 시 확인용 이메일" />
+            <input
+              type="email"
+              placeholder="[선택] 비밀번호 분실 시 확인용 이메일"
+            />
           </label>
         </div>
         <div className="form-list">
