@@ -1,26 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-import {createBrowserRouter,RouterProvider } from 'react-router-dom'
+import React from 'react';
+import { BrowserRouter, RouterProvider } from 'react-router-dom';
+import RouteConfig from './Router.jsx';
+
 function App() {
-  const router = createBrowserRouter([
-    {
-      path : '/',
-      element : <List /> 
-    }
-    ,
-    {
-      path : '/{listNum}',
-      element: <detailItem itemNum={listNum}/>
-    },
-    {
-      path : '/hi',
-      element : <p>hi</p>
-    }
-  ]);
+  const router = BrowserRouter();
 
   return (
-    <RouterProvider router = {router} />
-    
+    <RouterProvider router={router}>
+      <RouteConfig />
+    </RouterProvider>
   );
 }
 
