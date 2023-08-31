@@ -1,0 +1,53 @@
+:root {
+  --color-bg: #888;
+  --color-text: #fff;
+}
+
+.body {
+  background-color: var(--color-bg);
+}
+
+.container,
+.img,
+.info {
+  margin: 0 auto;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin-top: 20px;
+}
+
+.img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.info {
+  padding: 0;
+}
+
+.info > li {
+  list-style: none;
+  text-align: center;
+}
+
+.info .info_title {
+  font-weight: 600;
+  font-size: 20px;
+  margin: 10px;
+}
+
+.info .info_user,
+.info .info_date {
+  font-size: 13px;
+  color: var(--color-bg);
+}
+
+.info .info_date {
+}
+
+.info .info_content {
+}
