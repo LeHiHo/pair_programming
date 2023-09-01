@@ -1,10 +1,8 @@
 import React from 'react';
-import { useState } from 'react';
-import './item.css';
+import './Item.css';
 
-function Item({ dummy, name }) {
-  const { title, date, content, img } = dummy;
-  //   const [item, setItem] = useState(0);
+function Item({ userInfo }) {
+  const { title, date, content, img, user } = userInfo;
 
   return (
     <>
@@ -13,7 +11,7 @@ function Item({ dummy, name }) {
         <div>
           <ul className='info'>
             <li className='info_title'>{title}</li>
-            <li className='info_user'>{name}</li>
+            <li className='info_user'>{user}</li>
             <li className='info_date'>{date}</li>
             <li className='info_content'>{content}</li>
           </ul>
