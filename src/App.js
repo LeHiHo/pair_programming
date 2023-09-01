@@ -1,15 +1,20 @@
 import React from 'react';
-import { BrowserRouter, RouterProvider } from 'react-router-dom';
-import RouteConfig from './Router.jsx';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import ListPage from './pages/ListPage.jsx';
+import ListDetail from './pages/ListDetail.jsx';
 
 function App() {
-  const router = BrowserRouter();
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <ListPage />,
+    },
+    {
+      path: '/:id',
+      element: <ListDetail />,
+    },
+  ]);
 
-  return (
-    <RouterProvider router={router}>
-      <RouteConfig />
-    </RouterProvider>
-  );
+  return <RouterProvider router={router} />;
 }
-
 export default App;
