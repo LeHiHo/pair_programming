@@ -1,12 +1,8 @@
-import React from 'react';
-import { useParams } from 'react-router';
+import React from "react";
+import { useParams } from "react-router";
 
 export default function () {
-    const {id} = useParams();
+  const { id } = useParams();
 
-    return (
-        <>  
-            디테일페이지
-        </>
-    );
+  return <>디테일페이지</>;
 }
