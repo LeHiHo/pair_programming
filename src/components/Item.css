@@ -36,9 +36,21 @@
 }
 
 .info .info_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 600;
   font-size: 20px;
   margin: 10px;
+}
+
+.info .info_title .info_title__heart {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 20px;
+  margin-left: 10px;
+  cursor: pointer;
 }
 
 .info .info_user,
