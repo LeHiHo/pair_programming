@@ -9,7 +9,7 @@ export default function ListPage() {
       user: '작성자1',
       date: '오늘날짜',
       content: '아무내용',
-      img: 'url주소',
+      img: 'https://www.notion.so/9-f49289d79dad467391e0b9301828c580?pvs=4#7e526f8ef8ff4ef48ff2d9f718841c0b',
     },
     {
       id: 2,
@@ -17,7 +17,7 @@ export default function ListPage() {
       user: '작성자2',
       date: '오늘날짜',
       content: '아무내용',
-      img: 'url',
+      img: 'https://www.notion.so/9-f49289d79dad467391e0b9301828c580?pvs=4#7e526f8ef8ff4ef48ff2d9f718841c0b',
     },
     {
       id: 3,
@@ -25,7 +25,7 @@ export default function ListPage() {
       user: '작성자3',
       date: '어제날짜',
       content: '아무내용3333333333333333',
-      img: 'url주소',
+      img: 'https://www.notion.so/9-f49289d79dad467391e0b9301828c580?pvs=4#7e526f8ef8ff4ef48ff2d9f718841c0b',
     },
   ]);
 
