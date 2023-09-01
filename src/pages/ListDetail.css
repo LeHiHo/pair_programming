@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  margin-bottom: 10px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.container h1 {
+  background-color: #f6f3ee;
+}
