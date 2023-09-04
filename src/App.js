@@ -4,6 +4,10 @@ import ListPage from "./pages/ListPage.jsx";
 import ListDetail from "./pages/ListDetail.jsx";
 import ListWrite from "./pages/ListWrite.jsx";
 import { UserInfoProvider } from "./Contexts/UserInfoContext.jsx";
+import { analytics } from "./firebase/firebase.js";
+
+console.log(analytics);
+
 
 function App() {
   const router = createBrowserRouter([
