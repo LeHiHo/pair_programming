@@ -15,7 +15,7 @@ function Item({ userInfo }) {
   return (
     <>
       <div className="container">
-        <img className="img" src={`/img/${img}`} alt="" />
+        <img className="img" src={img} alt="" />
         <div>
           <ul className="info">
             <li className="info_title">

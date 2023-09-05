@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserInfoContext } from "../Contexts/UserInfoContext";
 import Item from "../components/Item.js";
+import { imgUrl } from "../firebase.js";
 
 export default function ListPage() {
   const [usersInfo, setUsersInfo] = useState([
@@ -11,7 +12,7 @@ export default function ListPage() {
       user: "작성자1",
       date: "오늘날짜",
       content: "아무내용",
-      img: "https://www.notion.so/9-f49289d79dad467391e0b9301828c580?pvs=4#7e526f8ef8ff4ef48ff2d9f718841c0b",
+      img: imgUrl,
     },
     {
       id: 2,
@@ -19,7 +20,7 @@ export default function ListPage() {
       user: "작성자2",
       date: "오늘날짜",
       content: "아무내용",
-      img: "https://www.notion.so/9-f49289d79dad467391e0b9301828c580?pvs=4#7e526f8ef8ff4ef48ff2d9f718841c0b",
+      img: imgUrl,
     },
     {
       id: 3,
@@ -27,7 +28,7 @@ export default function ListPage() {
       user: "작성자3",
       date: "어제날짜",
       content: "아무내용3333333333333333",
-      img: "https://www.notion.so/9-f49289d79dad467391e0b9301828c580?pvs=4#7e526f8ef8ff4ef48ff2d9f718841c0b",
+      img: imgUrl,
     },
   ]);
 

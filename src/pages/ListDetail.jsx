@@ -11,7 +11,7 @@ export default function ListDetail() {
     user: "작성자1",
     date: "오늘날짜",
     content: "오늘은 2023년 9월 1일입니다. 날씨가 매우 좋네요. ",
-    img: "https://jjalbang.today/files/jjalbox/2023/08/20230830_64ef0db062448.jpg",
+    img: "",
   };
   const { title, user, date, content, img } = data;
 
