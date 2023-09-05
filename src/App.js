@@ -6,7 +6,6 @@ import ListWrite from "./pages/ListWrite.jsx";
 import { UserInfoProvider } from "./Contexts/UserInfoContext.jsx";
 
 function App() {
-
   const router = createBrowserRouter([
     {
       path: "/",

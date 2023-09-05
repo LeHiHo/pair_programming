@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { getFirestore, getDocs, collection } from "firebase/firestore";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
 
 const firebaseConfig = {
@@ -11,15 +12,22 @@ const firebaseConfig = {
   measurementId: process.env.REACT_APP_MEASUREMENTID,
 };
 
-// Initialize Firebase
+// Firebase 초기 설정
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 const storage = getStorage(app);
 const imageRef = ref(storage, "jjalbang_image_1 (5).png");
 
+// 이미지 가져오기
 let imgUrl;
 try {
   imgUrl = await getDownloadURL(imageRef);
 } catch {
   imgUrl = "error";
 }
-export { imgUrl };
+
+// 데이터 읽어오기
+const querySnapshot = await getDocs(collection(db, "info"));
+
+
+export { imgUrl, querySnapshot };
