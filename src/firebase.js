@@ -29,5 +29,4 @@ try {
 // 데이터 읽어오기
 const querySnapshot = await getDocs(collection(db, "info"));
 
-
-export { imgUrl, querySnapshot };
+export { imgUrl, app, querySnapshot };
